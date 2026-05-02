@@ -37,21 +37,39 @@ Plaintext
         │    ├── api.js      # Axios production configuration
         │    └── App.js      # Routing and state logic
 ⚙️ Installation & Setup
+
+
+
 Clone the repository:
 
 Bash
+
 git clone https://github.com/abhinavch1234/project.git
+
+
+
+
 Setup Backend:
 
 Bash
+
 cd server
+
 npm install
+
 npm start
+
+
+
 Setup Frontend:
 
+
 Bash
+
 cd client
+
 npm install
+
 npm start
 🌐 Deployment Note
 The application is deployed on Railway. The frontend is configured to communicate with the production API endpoint, ensuring a seamless experience across local and live environments.
