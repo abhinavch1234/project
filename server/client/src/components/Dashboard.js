@@ -18,7 +18,7 @@ const Dashboard = () => {
     title: '',
     description: '',
     due_date: '',
-    status: 'todo'
+    status: 'TO DO'
   });
 
   const fetchStats = async () => {
@@ -39,7 +39,7 @@ const Dashboard = () => {
     try {
       await axios.post(`${API_BASE_URL}/tasks`, newTask);
       alert('Task Created & Assigned!');
-      setNewTask({ title: '', description: '', due_date: '', status: 'todo' }); 
+      setNewTask({ title: '', description: '', due_date: '', status: 'TO DO' }); 
       fetchStats();
     } catch (err) {
       console.error("Error creating task", err);
