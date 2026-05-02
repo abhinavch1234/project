@@ -58,19 +58,19 @@ Clone the repository:
 
 Setup Backend:
 
-cd server
+ cd server
 
-npm install
+ npm install
 
-npm start
+ npm start
 
 Setup Frontend:
 
-cd client
+ cd client
 
-npm install
+ npm install
 
-npm start
+ npm start
 
 🌐 Deployment Note
 The application is deployed on Railway. The frontend is configured to communicate with the production API endpoint, ensuring a seamless experience across local and live environments.
