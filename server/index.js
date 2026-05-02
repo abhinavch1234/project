@@ -9,26 +9,23 @@ const taskRoutes = require('./routes/tasks');
 dotenv.config();
 const app = express();
 
-// Initialize Supabase
+
 const supabase = createClient(
   process.env.SUPABASE_URL, 
   process.env.SUPABASE_KEY
 );
 
-// Middleware
+
 app.use(cors());
 app.use(express.json());
 
-// Pass Supabase client to every request
+
 app.use((req, res, next) => {
   req.supabase = supabase;
   next();
 });
 
-/** 
- * DASHBOARD ROUTE 
- * Requirements: tasks, status tracking, overdue logic
- */
+
 app.get('/api/dashboard', async (req, res) => {
   try {
     const { data: tasks, error } = await req.supabase
@@ -55,13 +52,15 @@ app.get('/api/dashboard', async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 });
+app.get('/', (req, res) => {
+  res.send('Server is running successfully!');
+});
 
-// Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/projects', projectRoutes);
 app.use('/api/tasks', taskRoutes);
 
-// Server Setup
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`🚀 Server running on port ${PORT}`);
