@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
-// Update this to your Railway URL for the final submission
+
 const API_BASE_URL = 'https://project-production-126f.up.railway.app/api';
 
 const Dashboard = () => {
@@ -13,7 +13,7 @@ const Dashboard = () => {
     overdue: 0
   });
 
-  // State for the new task form
+
   const [newTask, setNewTask] = useState({
     title: '',
     description: '',
@@ -39,8 +39,8 @@ const Dashboard = () => {
     try {
       await axios.post(`${API_BASE_URL}/tasks`, newTask);
       alert('Task Created & Assigned!');
-      setNewTask({ title: '', description: '', due_date: '', status: 'todo' }); // Reset form
-      fetchStats(); // Refresh numbers automatically
+      setNewTask({ title: '', description: '', due_date: '', status: 'todo' }); 
+      fetchStats();
     } catch (err) {
       console.error("Error creating task", err);
       alert('Failed to create task. Check if the backend route exists!');
@@ -51,7 +51,7 @@ const Dashboard = () => {
     <div style={{ padding: '20px', fontFamily: 'Arial, sans-serif' }}>
       <h2>📊 Project Dashboard</h2>
       
-      {/* Dashboard Stats */}
+     
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: '15px', marginBottom: '30px' }}>
         <Card title="Total Tasks" value={stats.totalTasks} color="#ebedef" />
         <Card title="To Do" value={stats.todo} color="#fff3cd" />
