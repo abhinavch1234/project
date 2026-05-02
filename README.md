@@ -59,13 +59,17 @@ Clone the repository:
 Setup Backend:
 
 cd server
+
 npm install
+
 npm start
 
 Setup Frontend:
 
 cd client
+
 npm install
+
 npm start
 
 🌐 Deployment Note
