@@ -10,15 +10,15 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      // Connects to your server running on port 5000
-      const res = await axios.post('http://localhost:5000/api/auth/login', { email, password });
       
-      // Save the token and user data
+      const res = await axios.post('https://project-production-126f.up.railway.app/api/auth/login', { email, password });
+      
+      
       localStorage.setItem('token', res.data.token);
       localStorage.setItem('user', JSON.stringify(res.data.user));
       
       alert("Login Successful!");
-      navigate('/dashboard'); // Redirect to dashboard after login
+      navigate('/dashboard');
     } catch (err) {
       alert(err.response?.data?.error || "Login Failed");
     }
