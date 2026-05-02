@@ -29,13 +29,22 @@ Deployment: Railway (CI/CD via GitHub)
 📁 Project Structure
 Plaintext
 /server
+ 
   ├── index.js          # Entry point & API routes
+  
   ├── routes/           # Express route handlers (auth, tasks, projects)
+  
   └── /client           # React Frontend
+  
         ├── src/
+        
         │    ├── components/ # Dashboard, Login, CreateTask
+        
         │    ├── api.js      # Axios production configuration
+        
         │    └── App.js      # Routing and state logic
+
+
 ⚙️ Installation & Setup
 
 
